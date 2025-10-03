@@ -12,32 +12,29 @@ def fibonacci_sequence():
     while True:
         user_input = input("Enter how many terms of the Fibonacci sequence you want: ")
 
-        try:
+        
+        if user_input.isdigit():
             num_terms = int(user_input)
 
-        if num_terms > 0:
-                break  
-        else:
-                
-        print("Please enter a positive integer.")
-        except ValueError:
-            
-            print("Please enter a positive integer.")
-    a = 0
-    b = 1
+            if num_terms > 0:
+             break
+ else:
+       print("Please enter a positive integer greater than 0.")
+ else:
+       print("Please enter digits only (positive integer).")
 
+    a, b = 0, 1
+   
     if num_terms == 1:
         print(a)
-    elif num_terms >= 2:
-        
+    elif numterms >= 2:
         print(a, end=" ")
         print(b, end=" ")
 
-        for _ in range(3, num_terms + 1):
+        for  in range(2, num_terms):
             next_term = a + b
-          
             print(next_term, end=" ")
-            a = b
-            b = next_term
+            a, b = b, next_term
 
-        print()
+    print()  
+
