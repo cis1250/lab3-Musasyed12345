@@ -6,35 +6,28 @@
 # Validate that the input is a positive integer.
 # Use a for loop to print the Fibonacci sequence up to that many terms.
 
-def fibonacci_sequence():
-    """Calculates and prints the Fibonacci sequence up to a specified number of terms."""
+print('User input: ', end='')
+amount = input()
 
-    while True:
-        user_input = input("Enter how many terms of the Fibonacci sequence you want: ")
+while not amount.isdigit() or int(amount) < 0:
+    print('Expected output: Please enter a positive integer.')
+    print()
+    print('User input: ', end='')
+    amount = input()
 
-        
-        if user_input.isdigit():
-            num_terms = int(user_input)
+amount = int(amount)
+print('Expected output: ', end='')
+num_one = 0
+num_two = 1
+for i in range(amount):
+    print(num_one, end='')
+    if i < amount - 1:
+        print(' ', end='')
+    temp = num_one
+    num_one = num_two
+   num_two = temp + num_two
 
-            if num_terms > 0:
-             break
- else:
-       print("Please enter a positive integer greater than 0.")
- else:
-       print("Please enter digits only (positive integer).")
+print() 
 
-    a, b = 0, 1
-   
-    if num_terms == 1:
-        print(a)
-    elif numterms >= 2:
-        print(a, end=" ")
-        print(b, end=" ")
 
-        for  in range(2, num_terms):
-            next_term = a + b
-            print(next_term, end=" ")
-            a, b = b, next_term
-
-    print()  
 
